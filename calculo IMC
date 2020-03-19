@@ -1,0 +1,45 @@
+package calculoimc;
+
+import java.util.Locale;
+import javax.swing.JOptionPane;
+
+public class CalculoIMC {
+
+    public static void main(String[] args) {
+        double peso,estatura,imc;
+        boolean repetir = true;
+    do{
+        try{
+            peso = Double.parseDouble(JOptionPane.showInputDialog("Ingrese su peso: "));
+            estatura = Double.parseDouble(JOptionPane.showInputDialog("Ingrese su estatura: "));
+            repetir = false;
+            imc = peso/(estatura*estatura);
+            if (imc<18.5) {
+              JOptionPane.showMessageDialog(null,"Estas por debajo del peso normal, consulta con un nutricionista");
+              JOptionPane.showMessageDialog(null,"FIN DEL PROGRAMA, que tengas buen dia!");
+
+        } else if (imc>=18.5 && imc<=24.9) {
+
+              JOptionPane.showMessageDialog(null,"Estas dentro de parámetros de peso normales");
+              JOptionPane.showMessageDialog(null,"FIN DEL PROGRAMA, que tengas buen dia!");
+
+        } else if (imc>=25 && imc<=29.9) {
+
+              JOptionPane.showMessageDialog(null,"Estas con un poco de sobrepeso, HAZ EJERCICIO!!");
+              JOptionPane.showMessageDialog(null,"FIN DEL PROGRAMA, que tengas buen dia!");
+
+        } else {
+
+              JOptionPane.showMessageDialog(null,"Tu IMC declara obesidad, consulta con un nutricionista ");
+              JOptionPane.showMessageDialog(null,"FIN DEL PROGRAMA, que tengas buen dia!");
+
+        }
+        }   catch (Exception e){
+                    JOptionPane.showMessageDialog(null,"ERROR, Ingresa datos válidos. Recuerda no ingresar datos con coma (,)!");
+                    }
+        }
+        while (repetir);
+    }
+    }
+    
+
